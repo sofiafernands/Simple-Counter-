@@ -1,26 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import SecondCounter from "./card.jsx";
+
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
 
+
 //create your first component
+
 const Home = () => {
-	return (
+	const [seconds, setSeconds] = useState(0)
+
+	useEffect(() => {
+		setInterval(() => {
+			setSeconds(prevSeconds => prevSeconds + 1);
+		}, 1000)
+	}, []);
+	
+	useEffect(() => {
+		if (seconds === 11) {
+			setSeconds(0)
+		}
+	}, [seconds])
+    
+	return (	
+
+       //div variante de numero
 		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+			<SecondCounter number={seconds}/>
 		</div>
 	);
+
 };
 
 export default Home;
