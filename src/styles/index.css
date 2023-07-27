@@ -1,4 +1,13 @@
-
+body {
+    background-image: url('https://images.pexels.com/photos/1178684/pexels-photo-1178684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-repeat: no-repeat;
+    background-size: cover; /* La imagen se ajustará para cubrir todo el fondo */
+    height: 50vh; /* Establece la altura del body al 100% de la ventana del navegador */
+    margin: 0; /* Elimina los márgenes predeterminados del body para ocupar toda la página */
+    /* Puedes ajustar otros estilos, como el color de fondo o la transparencia, según tus preferencias */
+  }
+  
+  
 /* 
 
     You can write your own styles here...
